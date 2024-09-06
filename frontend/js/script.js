@@ -4,10 +4,10 @@ const parties_container = document.getElementById('parties_container');
 let parties = [];
 let servicesdata = [];
 if(localStorage.length > 0 ){
-    window.location.href = './login/login.html';
+    window.location.href = 'frontend/login/login.html';
 }
 document.getElementById('login_button').onclick = () => {
-    window.location.href = './login/login.html';
+    window.location.href = 'frontend/login/login.html';
 }
 async function Get_parties() {
     const response = await fetch(url_api_parties);
@@ -24,7 +24,7 @@ async function get_services() {
     
     data.forEach(service =>{
         services_form.innerHTML += `
-            <div class="col-md-4 col-sm-12">
+            <div class="col-md-4 col-sm-12 ">
                 <div class="card mb-5 shadow-sm p-2">
                     <div class="img_party" style=" background-image: url('${service.image}'); background-size: cover;"></div>
                     <div class="card-body">
@@ -63,7 +63,7 @@ async function start_parties() {
             }
             if(party.public){
                 parties_container.innerHTML += `
-                <div class="col-lg-4 col-md-6 col-sm-12">
+                <div class="col-lg-4 col-md-6 col-sm-12 text-md-start text-center">
                     <div class="card mb-5 shadow-sm p-2">
                         <div class="img_party" style=" background-image: url('${party.image}');"></div>
                         <div class="card-body">

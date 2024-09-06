@@ -7,7 +7,7 @@ const url_register ='https://login-teste-c3x7.onrender.com/auth/register'
 const url_user = 'https://login-teste-c3x7.onrender.com/user'
 //troca de formulários
 document.getElementById('back').onclick = () => {
-    window.location.href = '../index.html';
+    window.location.href = '../../index.html';
 }
 container.addEventListener('click', (event) =>{
     if(event.target.innerHTML === 'Já tem uma conta?'){

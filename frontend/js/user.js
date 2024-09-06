@@ -40,7 +40,7 @@ async function start(data) {
 
     document.getElementById('logout').onclick = () => {
         localStorage.removeItem('userData');
-        window.location.href = 'index.html'; // Redireciona para a página de login
+        window.location.href = '../index.html'; // Redireciona para a página de login
     }
     /******************************************************************************* */
     const url_api_parties = 'http://localhost:3000/api/parties'
@@ -112,6 +112,7 @@ async function start(data) {
     }
     party_form.onsubmit = async (e) => {
         e.preventDefault();
+        create_party_button.innerHTML = 'Criar Festa'
         let public = document.getElementById('select_party_form').value
         
         let party_object = {
@@ -180,7 +181,7 @@ async function start(data) {
                         if(user.email === party.email){
                             c ++;
                             parties_container.innerHTML += `
-                                <div class="col-lg-4 col-md-6 col-sm-12">
+                                <div class="col-lg-4 col-md-6 col-sm-12  text-md-start text-center">
                                     <div class="card mb-5 shadow-sm p-2">
                                         <div class="img_party" style=" background-image: url('${party.image}');"></div>
                                         <div class="card-body">
@@ -204,7 +205,7 @@ async function start(data) {
                         }
                     }else{
                         parties_container.innerHTML += `
-                            <div class="col-lg-4 col-md-6 col-sm-12">
+                            <div class="col-lg-4 col-md-6 col-sm-12  text-md-start text-center">
                                 <div class="card mb-5 shadow-sm p-2">
                                     <div class="img_party" style=" background-image: url('${party.image}');"></div>
                                     <div class="card-body">
@@ -231,7 +232,7 @@ async function start(data) {
                         if(user.email === party.email){
                             c ++;
                             parties_container.innerHTML += `
-                                <div class="col-lg-4 col-md-6 col-sm-12">
+                                <div class="col-lg-4 col-md-6 col-sm-12  text-md-start text-center">
                                     <div class="card mb-5 shadow-sm p-2">
                                         <div class="img_party" style=" background-image: url('${party.image}');"></div>
                                         <div class="card-body">
