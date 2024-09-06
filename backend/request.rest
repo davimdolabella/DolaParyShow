@@ -1,0 +1,70 @@
+POST http://localhost:3000/api/services
+Content-Type: application/json
+
+{
+    "name": "teste",
+    "description": "Alguma Descrição",
+    "price": 1650,
+    "image": "aaaa"
+}
+
+###
+
+GET http://localhost:3000/api/services
+
+###
+GET http://localhost:3000/api/services/66c6628cf314ea98e6013d70
+
+###
+DELETE  http://localhost:3000/api/services/66c66ecb6bbb61509f8539ca
+
+###
+PUT http://localhost:3000/api/services/66c6714a6feece0d3bbb311c
+Content-Type: application/json
+
+{
+    "name": "lalala",
+    "description": "Alguma Descrição",
+    "price": 2450,
+    "image": "aaaa"
+}
+###
+POST http://localhost:3000/api/parties
+Content-Type: application/json
+
+{
+    "title": "festa teste 2",
+    "author": "Dante",
+    "description": "Alguma Descrição",
+    "budget": 10650,
+    "image": "aaaa",
+    "services": [
+        
+    ]
+}
+###
+GET http://localhost:3000/api/parties
+
+###
+GET http://localhost:3000/api/parties/66c67d9fb0187cdddbdf9c9d
+###
+DELETE  http://localhost:3000/api/parties/66d9b28d6c6ea18c5718d8fa
+Content-Type: application/json
+
+{
+    "email":"davimdolabella.p@gmail.com"
+}
+###
+PUT http://localhost:3000/api/parties/66c67d9fb0187cdddbdf9c9c
+Content-Type: application/json
+
+{
+    "title": "A maior de todas",
+    "author": "Dante",
+    "description": "Alguma Descrição",
+    "budget": 100650,
+    "image": "aaaa",
+    "services": [
+        
+    ]
+}

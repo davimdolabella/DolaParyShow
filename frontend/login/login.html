@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <style>
+        span{
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!--Login Form-->
+        <div class="row" >
+            <form class="col-md-6 col-sm-12 row g-3 mx-auto " id="login_form">
+                <h3 class="text-center display-5" >Login</h3>
+                <div class="col-12 ">
+                    <input type="email" id="email_login" class="form-control" placeholder="Email:" required>
+                </div><!--email-->
+                <div class="col-12">
+                    <input type="password" id="password_login" class="form-control" placeholder="Senha" required>
+                </div><!--password-->
+                <div class="col-12">
+                    <input type="submit" class="btn btn-primary col-12 mb-2" value="Enviar">
+                    <span class="text-primary text-decoration-underline">Ainda não tem uma conta?</span>
+                </div><!--submit-->
+                <div class="btn btn-outline-primary rounded me-2 col-3" id="back">Voltar</div>
+            </form>
+        </div>
+        <!--resgister user form-->
+        <div class="row">
+            <form class="col-md-6 col-sm-12 row g-3 mx-auto mb-5" id="register_form" style="display: none;">
+                <h3 class="text-center display-5" >Criar conta</h3>
+                <div class="col-12 ">
+                    <input type="text" id="name_register" class="form-control" placeholder="Nome:" required>
+                </div><!--email-->
+                <div class="col-12 ">
+                    <input type="email" id="email_register" class="form-control" placeholder="Email:" required>
+                </div><!--email-->
+                <div class="col-12">
+                    <input type="password" id="password_register" class="form-control" placeholder="Senha" required>
+                </div><!--password-->
+                <div class="col-12">
+                    <input type="password" id="confirmpass_register" class="form-control" placeholder="Confirme a Senha:" required>
+                </div><!--password-->
+                <div class="col-12">
+                    <input type="submit" class="btn btn-primary col-12 mb-2" >
+                    <span class="text-primary text-decoration-underline">Já tem uma conta?</span>
+                   
+                </div><!--submit-->
+               
+            </form>
+        </div>
+    </div>
+    <script src="login.js"></script>
+</body>
+</html>
