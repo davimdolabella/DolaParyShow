@@ -1,5 +1,5 @@
-const url_api_parties = 'http://localhost:3000/api/parties'
-const url_api_services = 'http://localhost:3000/api/services'
+const url_api_parties = 'https://dolaparyshow.onrender.com/api/parties'
+const url_api_services = 'https://dolaparyshow.onrender.com/api/services'
 const parties_container = document.getElementById('parties_container');
 let parties = [];
 let servicesdata = [];
