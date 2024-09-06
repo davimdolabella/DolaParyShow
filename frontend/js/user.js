@@ -43,8 +43,8 @@ async function start(data) {
         window.location.href = '../index.html'; // Redireciona para a página de login
     }
     /******************************************************************************* */
-    const url_api_parties = 'http://localhost:3000/api/parties'
-    const url_api_services = 'http://localhost:3000/api/services'
+    const url_api_parties = 'https://dolaparyshow.onrender.com/api/parties'
+    const url_api_services = 'https://dolaparyshow.onrender.com/api/services'
     const parties_container = document.getElementById('parties_container');
     const party_form = document.getElementById('party_form');
     const create_party_button = document.getElementById('create_party_button');
