@@ -20,7 +20,7 @@ async function start(data) {
     // await user;
     document.getElementById('init').innerHTML = `
         <h1 class="mb-5">Olá ${user.name}!</h1>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light mb-3 px-2">
+        <nav class="navbar navbar-expand-lg navbar-light border border-2 rounded  mb-3 px-2">
             <div class="container-fluid justify-content-between p-2">
             <div class="navbar-brand">DolaPartyShow</div>
             <button id="logout" class="btn btn-outline-danger">Sair</button>
@@ -50,6 +50,7 @@ async function start(data) {
     const create_party_button = document.getElementById('create_party_button');
     let parties = [];
     let my_parties = false;
+    let user_has_party = false;
     let servicesdata = [];
     let my_party_button = document.getElementById('my_party_button')
     my_party_button.onclick = () =>{
@@ -60,6 +61,7 @@ async function start(data) {
         }
         my_parties = !my_parties
         parties_container.innerHTML = '<h2>Carregando...<h2>';
+        user_has_party = false;
         start_parties();
         console.log(my_parties); 
     }
@@ -171,15 +173,15 @@ async function start(data) {
             parties.forEach(party => {
                 console.log(party, user)
                 let party_servicos = '';
-                if(party.services.length == 0){party_servicos = ' Nenhum'}
+                if(party.services.length == 0){party_servicos = 'Nenhum'}
                 for (let i = 0; i < party.services.length; i++) {
                     party_servicos += ` "${party.services[i].name}"`; 
                 }
-                let c = 0;
+                
                 if(party.public){
                     if(my_parties == true){
                         if(user.email === party.email){
-                            c ++;
+                            user_has_party = true;
                             parties_container.innerHTML += `
                                 <div class="col-lg-4 col-md-6 col-sm-12  text-md-start text-center">
                                     <div class="card mb-5 shadow-sm p-2">
@@ -199,9 +201,6 @@ async function start(data) {
                                     </div>
                                 </div>
                             `;
-                        }
-                        if(c === 0){
-                            parties_container.innerHTML = '<h3 class="text-center">Você não possui Festas no momento</h3>';
                         }
                     }else{
                         parties_container.innerHTML += `
@@ -224,13 +223,10 @@ async function start(data) {
                             </div>
                         `;
                     }
-                    if (c > 0 && my_parties === true) {
-                        parties_container.firstChild.innerHTML = '';
-                    }
                 }else{
                     if(my_parties == true){
                         if(user.email === party.email){
-                            c ++;
+                            user_has_party = true;
                             parties_container.innerHTML += `
                                 <div class="col-lg-4 col-md-6 col-sm-12  text-md-start text-center">
                                     <div class="card mb-5 shadow-sm p-2">
@@ -251,20 +247,13 @@ async function start(data) {
                                 </div>
                             `;
                         }
-                        if(c === 0){
-                            parties_container.innerHTML = '<h3 class="text-center">Você não possui Festas no momento</h3>';
-                        }else if( c > 0 && parties_container.innerHTML === '<h3 class="text-center">Você não possui Festas no momento</h3>'){
-                            parties_container.innerHTML = '';
-                        }
                     }
-                    if (c > 0 && my_parties === true) {
-                        parties_container.firstChild.innerHTML = '';
-                    }
+                    
                 }
-                
-                
-               
             });
+            if(user_has_party === false && my_parties){
+                parties_container.innerHTML = '<h2 class="text-center">Crie sua própria festa!</h2>'
+            }
             parties_container.addEventListener('click', (e) => {
                 if (e.target && e.target.innerHTML === 'Detalhes') {
                     window.scrollTo({
